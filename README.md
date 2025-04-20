@@ -110,17 +110,17 @@ We can make this readable by:
 
 We can do this by using the AST form of the script via bapel as seen [here](./deobfuscation/bapel.js#L55)
 
-Which gives us [ems2](./deobfVersions/ems2.js#L1798)
-
-When debugging the Virtual Machine later and seeing which function it uses
-i was able to tell what it's doing and changed some of var names.
+Which gives us [this](./deobfVersions/ems2.js#L1798)
 
 The Virtual Machine part of the script, specifically when executing the bytecode
-is a massively nested if else statement as seen [here](./deobfVersions/ems2.js#L2235)
+is a nested if else statement as seen [here](./deobfVersions/ems2.js#L2235)
 
 It is actually just a normal switch case but has been disguised pretty well. After manually
 doing some of the cases, AI was able to help me out and do the rest. Which gave me [this](./handleBytecode.js), 
 which looks pretty standard for a bytecode VM.
+
+When debugging the Virtual Machine later and seeing which functions it uses
+I was able to tell what it's doing and changed some of var names.
 
 After all of this and a few more small obfuscation techniques
 [here](./latestDeobf.js) is the latest version of the file.
@@ -160,9 +160,9 @@ NOTE: The string was gZip-ed and each value was leb128 encoded both for compress
 
 ## Virtual Machine decompiling
 
-TikTok is using a full-fledged bytecode VM, if you browse through [it](vm.js) it supports
+TikTok is using a full-fledged bytecode VM, if you browse through [it](vm.js), it supports
 scopes, nested functions and exeception handling. This isn't a typical VM and shows that
-it is definetly sophiscated.
+it is netly sophiscated.
 
 To be able to write a form of decompilation I simply went through each of the cases 
 and wrote appropriate code for each one, and any case that jumps to another position 
@@ -185,7 +185,7 @@ case 2:
     break;
 ```
 
-After doing this for all the functions I dumped each file [here](./decompiler/functions/).
+After doing this for all the cases I dumped each file [here](./decompiler/functions/).
 It's not completely readable but you should be able to make out a general idea
 of what each function is doing, for example [VM223](./decompiler/functions/VM223.js) which is
 generating random characters.
@@ -195,11 +195,11 @@ generating random characters.
 ## Debugging
 
 As this is a Javascript file executed on the web, it is actually possible to replace
-the deobfuscated file with the normal `webmssdk.js` script and use TikTok normally.
+the normal `webmssdk.js` with the deobfuscated file and use TikTok normally.
 
 This can be achieved by using two browser extensions known as [Tampermonkey](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en-GB) for executing
 custom code and [CSP](https://chromewebstore.google.com/detail/disable-content-security/ieelmcmcagommplceebfedjlakkhpden?hl=en-GB&pli=1) to disable CSP so I can fetch files from blocked origins. This is so I
-can put `latestDeobf.js` in my own file and have it be fetched each time, this is so I can easily
+can put `latestDeobf.js` in my own file server and have it be fetched each time, this is so I can easily
 edit the file and let the changes take effect each time I refresh. This makes it much easier to bebug
 when reversing functions.
 
