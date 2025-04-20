@@ -56,7 +56,7 @@ and run it in any console and retrieve:
 ```
 
 We can now see each of these strings, therefore we can use RegEx to go through
-the script and replace all uses of the array as seen [here](./deobfuscation/changeNotation.js)
+the script and replace all uses of the array as seen [here](./deobfuscation/changeNotation.js#L322)
 It will also convert the bracket notation back to readable dot notation.
 
 After that we've left with [webmssdk1](./deobfVersions/ems1.js).
@@ -110,7 +110,7 @@ We can make this readable by:
 
 We can do this by using the AST form of the script via bapel as seen [here](./deobfuscation/bapel.js#L55)
 
-Which gives us [ems2](./deobfVersions/ems2.js)
+Which gives us [ems2](./deobfVersions/ems2.js#L1798)
 
 When debugging the Virtual Machine later and seeing which function it uses
 i was able to tell what it's doing and changed some of var names.
