@@ -225,8 +225,7 @@ needed to be generated which can be done using `window.frontierSign`. `_signatur
 and any `msToken` can be used.
 
 This popular [API](https://github.com/davidteather/TikTok-Api) let's you make those requests.
-It uses a webdriver library called [playwright](https://playwright.dev/python/docs/api/class-playwright), which is also know as webdrives that simply set up
-a browser instance, so it can easily call `window.frontierSign`.
+It uses a webdriver library called [playwright](https://playwright.dev/python/docs/api/class-playwright), that simply sets up a browser instance, so it can easily call `window.frontierSign`.
 
 When it comes to making authentication-based requests like posting a comment, `_signature` is needed
 and isn't exposed to `window`.
