@@ -8,7 +8,8 @@ TikTok uses a custom virtual machine (VM) as part of its obfuscation and securit
 
 - **Deobfuscate** `webmssdk.js` that has the virtual machine.
 - **Decompile** TikTok’s virtual machine instructions into readable form.
-- **Script Inject** Replace webmssdk.js with the deobfuscated VM [injector](./injector.js)
+- **Script Inject** Replace webmssdk.js with the deobfuscated VM [injector](./injector.js).
+- **Sign URLs** Generate signed URLs which can be used to perform auth-based requests eg. Post comments.
 
 ---
 
@@ -227,7 +228,7 @@ This popular [API](https://github.com/davidteather/TikTok-Api) let's you make th
 It uses a webdriver library called [playwright](https://playwright.dev/python/docs/api/class-playwright), which is also know as webdrives that simply set up
 a browser instance, so it can easily call `window.frontierSign`.
 
-When it comes to making authentication-type requests like posting a comment, `_signature` is needed
+When it comes to making authentication-based requests like posting a comment, `_signature` is needed
 and isn't exposed to `window`.
 
 ---
