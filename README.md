@@ -68,7 +68,7 @@ r.addEventListener("abort", e),
 
 Much better.
 
-Another significant obfuscation method used is for disgusing function calls.
+Another significant obfuscation method used is for disguising function calls.
 
 Each function is defined in an array `Ab`.
 
@@ -130,7 +130,7 @@ After all of this and a few more small obfuscation techniques
 ## Decrypting Bytecode
 
 With the file fully deobfuscated, figuring out the functionality was much easier,
-I easily found how the VM was being initaited [here](./latestDeobf.js#L3041).
+I easily found how the VM was being initiated [here](./latestDeobf.js#L3041).
 
 The bytecode is stored as a long string that's all been XOR'ed with a key that
 lies within the string.
@@ -161,8 +161,8 @@ NOTE: The string was gZip-ed and each value was leb128 encoded both for compress
 ## Virtual Machine decompiling
 
 TikTok is using a full-fledged bytecode VM, if you browse through [it](vm.js), it supports
-scopes, nested functions and exeception handling. This isn't a typical VM and shows that
-it is netly sophiscated.
+scopes, nested functions and exception handling. This isn't a typical VM and shows that
+it is definitely sophiscated.
 
 To be able to write a form of decompilation I simply went through each of the cases 
 and wrote appropriate code for each one, and any case that jumps to another position 
