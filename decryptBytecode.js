@@ -42,6 +42,9 @@ function Ab27(e) {
 const fs = require('fs');
 
 /**
+NOTE: this could actually be wrong
+not sure if these are in the correct order
+
  * execptionHandler = [start, handler, end, finally]
  * in each handleControlFlow() it will check if it's in the range
  * of an try catch (start - end)
