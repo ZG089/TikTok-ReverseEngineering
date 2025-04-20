@@ -42,7 +42,7 @@ Each use of this method is using an array `Gb` defined as
 As you can see we can't even read this either as it's all encoded 
 using this string `"LsfVNxutyOcrEMpYAGdFHneaUKRXSgoJDbhqICzPZklivTmWBwQj"`.
 
-Because this code get's executed immeditately we can simply take this snippet
+Because this code get's executed immediately we can simply take this snippet
 and run it in any console and retrieve:
 
 ```js
@@ -165,7 +165,7 @@ scopes, nested functions and exeception handling. This isn't a typical VM and sh
 it is definetly sophiscated.
 
 To be able to write a form of decompilation I simply went through each of the cases 
-and wrote appriopriate code for each one, and any case that jumps to another position 
+and wrote appropriate code for each one, and any case that jumps to another position 
 for loops like this: 
 
 ```js
@@ -186,7 +186,7 @@ case 2:
 ```
 
 After doing this for all the functions I dumped each file [here](./decompiler/functions/).
-It's not completely readable but you should be able to make out a genereal idea
+It's not completely readable but you should be able to make out a general idea
 of what each function is doing, for example [VM223](./decompiler/functions/VM223.js) which is
 generating random characters.
 
