@@ -257,7 +257,7 @@ with the server about, so it can be ignored when generating the signatures.
 ---
 
 ## Extra info
-- **Note:** The TikTok VM is constantly changing with new releases and this version is out of date. There's a high chance the main algorithms will change and decompilation of the new VM is needed.
+- **Note:** The TikTok VM is constantly changing with new releases. There's a high chance the main algorithms will change and decompilation of the new VM is needed.
 
 
 
