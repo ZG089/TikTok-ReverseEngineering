@@ -42,7 +42,7 @@ Each use of this method is using an array `Gb` defined as
 As you can see we can't even read this either as it's all encoded 
 using this string `"LsfVNxutyOcrEMpYAGdFHneaUKRXSgoJDbhqICzPZklivTmWBwQj"`.
 
-Because this code get's executed immediately we can simply take this snippet
+Because this code gets executed immediately we can simply take this snippet
 and run it in any console and retrieve:
 
 ```js
